@@ -114,3 +114,22 @@ add column room_id int;
 
 alter table Showtimes
 add foreign key (room_id) references Rooms (room_id);
+
+ALTER TABLE Movies
+MODIFY COLUMN rating DECIMAL(2,1);
+
+ALTER TABLE Movies
+ADD COLUMN thumbnail VARCHAR(300);
+
+ALTER TABLE Users
+MODIFY COLUMN password VARCHAR(100) NOT NULL DEFAULT '';
+
+ALTER TABLE Users
+ADD COLUMN google_account_id INT(11) DEFAULT 0,
+ADD COLUMN role_id INT(11) DEFAULT NULL;
+
+ALTER TABLE Users
+MODIFY COLUMN google_account_id INT DEFAULT 0,
+MODIFY COLUMN role_id INT DEFAULT NULL;
+
+ALTER TABLE Users DROP COLUMN mail;
